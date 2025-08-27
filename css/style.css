@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: 'KyivType Sans';
+    src: url('../font/kyivtype-sans-light.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Eesti Pro Text';
+    src: url('../font/gteestiprotext-medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Golos Text';
+    src: url('../font/golos-text-regular10.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; 
+}
+
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: none;
+}
+
+.bg-image.active {
+    opacity: 1;
+    display: block;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.video-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.header_block {
+    display: flex;
+    width: 100%;
+    height: 104px;
+    backdrop-filter: blur(5px);
+    position: relative;
+}
+
+.header_block::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    right: 40px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+.rating {
+    display: flex;
+    width: 146px;
+    height: 48px;
+    background-color: #F0E7DF1F;
+    border-radius: 34px;
+    border: 1px solid #ffffff73;
+    margin-left: 40px;
+    position: relative;
+    top: 28px;
+}
+
+.logo_Yandex {
+    width: 40px;
+    height: 40px;  
+    margin: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.logo_Yandex img {  
+    width: 24px;
+    height: 24px;
+    margin: 8px 0 0 8px;
+}
+
+
+.rating_title {
+    padding: 0 0 0 3px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #ffff;
+    font-family: 'KyivType Sans', sans-serif;
+}
+
+.rating_title span {
+    font-size: 12px;
+    font-weight: 400;
+    color: #ffffffb2;
+    padding-right: 5px;
+}
+
+.rating-dot {
+    color: #fff !important;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.rating-dot span {
+    color: #ffffffb2;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.rating-dot::before {
+    content: ' · ';
+    font-weight: 900;
+    font-size: 15px;
+    color: #fff;
+}
+
+.salon_title {
+    font-family: 'KyivType Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    padding: 35px 0 0 15px;
+}
+
+
+.logo_angel {
+    margin: 18px 0 0 257px;
+}
+
+.contact_information {
+    display: flex;
+    gap: 8px;
+    margin: 32px 0 0 145px;
+}
+
+.whatsapp_block,
+.telegram_block {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    background-color: #FFFFFF1F;
+}
+.telegram_block img,
+.whatsapp_block img {
+    padding: 5px 0 0 1px;
+}
+
+.whatsapp_block:hover,
+.telegram_block:hover {
+    background-color: #00000065;
+    transition: 1s;
+}
+
+.contact_title {
+    font-family: 'KyivType Sans', sans-serif;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    margin-left: 12px;
+}
+
+.contact_title span {
+    font-family: 'KyivType Sans', sans-serif;
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 124%;
+    letter-spacing: -1%;
+    vertical-align: middle;
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "tnum" 1;
+}
+
+.btn_appointment {
+    width: 201px;
+    height: 40px;
+    background-color: #FFFFFF;
+    border-radius: 999px;
+    font-family: 'Golos Text', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 12px 18px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 24px;
+}
+
+.arrow {
+    width: 24px;
+    height: 24px;
+    background-color: #AA7D26;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.main_block {
+    padding: 4px 0;
+    backdrop-filter: blur(2.2px);
+}
+
+.hero_section {
+    display: flex;
+    gap: 12px;
+}
+
+.hero_section a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'KyivType Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.all_services_btn {
+    height: 48px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-family: 'KyivType Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 30px;
+}
+
+.main_block::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    right: 40px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+.angel_title {
+    font-family: 'GT Eesti Pro Text', sans-serif;
+    font-style: normal;
+    color: #FFFFFF;
+    font-size: 60px;
+    font-weight: 400;
+    padding: 52px 0 0 40px;
+}
+
+.indicator {
+    margin: -40px 0 0 758px;
+}
+
+.angel_subtitle {
+    font-family: 'KyivType Sans', sans-serif;
+    color: #fff;
+    font-weight: 300;
+    font-size: 18px;
+    padding: 0 0 0 30px;
+}
+
+.btn_services {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 283px;
+    height: 56px;
+    border-radius: 999px;
+    border: none;
+    font-family: 'KyivType Sans', sans-serif;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    background: linear-gradient(135deg, #D4B26F 0%, #A87C25 100%);
+    cursor: pointer;
+    padding-left: 30px;
+    margin: 34px 0 0 40px;
+}
+
+.arrow_services {
+    width: 24px;
+    height: 24px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.btn_services:hover {
+    background: linear-gradient(135deg, #cca047 0%, #765a23 100%);
+    transition: 1s;
+}
+
+.services_section {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.services_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.services_cards {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.services_cards::-webkit-scrollbar {
+    display: none;
+}
+
+.service_card {
+    width: 144px;
+    height: 138px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.service_card.active {
+    background: rgba(255, 255, 255, 0.95);
+    min-width: 260px;
+    height: 138px;
+    border: 1px solid rgba(170, 125, 38, 0.3);
+}
+
+.card_number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    font-family: 'Golos Text', sans-serif;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    z-index: 2;
+}
+
+.service_card.active .card_number {
+    color: #000000;
+    border: 1px solid #D5AF6299;
+}
+
+.service_card:not(.active) .card_number {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.card_content {
+    margin-top: 40px;
+    height: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+}
+
+.card_title {
+    font-family: 'KyivType Sans', sans-serif;
+    font-size: 12px !important;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.service_card.active .card_title {
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.service_card:not(.active) .card_title {
+    color: #fff;
+}
+
+.card_image {
+    position: absolute;
+    top: 2px;
+    right: -2px;
+    width: 50%;
+    height: 100%;
+    border-radius: 0 20px 20px 0;
+    overflow: hidden;
+    display: none;
+}
+
+.service_card.active .card_image {
+    display: block;
+}
+
+.card_image img {
+    width: 124px;
+    height: 130px;
+    object-fit: cover;
+}
+
+.services_progress {
+    margin-top: 30px;
+    display: flex;
+}
+
+.progress_bar {
+    display: flex;
+    gap: 10px;
+}
+
+.progress_segment {
+    width: 142px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.progress_segment.active {
+    width: 260px;
+    height: 4px;
+    background: linear-gradient(to right, #FFFFFF 0%, #FFFFFF var(--fill-percentage, 0%), rgba(255, 255, 255, 0.3) var(--fill-percentage, 0%));
+    transition: background 0.1s ease;
+}
+
+/* Скрываем 7-й сегмент и 7-ю карточку в обычной версии */
+.progress_segment:nth-child(7) {
+    display: none;
+}
+
+.service_card:nth-child(7) {
+    display: none;
+}
+
+.img_tay
+.img_beauty,
+.img_floating,
+.img_spa,
+.img_figure {
+    width: 124px;
+    height: 130px;
+    border-radius: 20px;
+}
+
+.mobile_menu {
+    display: none;
+}
+
+
+
